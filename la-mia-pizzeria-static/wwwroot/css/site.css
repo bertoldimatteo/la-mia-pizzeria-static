@@ -16,3 +16,19 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.pizza-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pizza {
+    text-align: center;
+    margin: 0 20px;
+    padding: 10px;
+}
+
+.image {
+    width: 300px;
+}
