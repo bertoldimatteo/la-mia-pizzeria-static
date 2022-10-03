@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Esercizi";
+
+    var name = "Matteo ";
+    var surname = "Bertoldi";
+    var completeName = name + surname;
+
+    List<int> IntList = new List<int>();
+
+    for (var i = 0; i < 20; i++){
+        Random rnd = new Random();
+        int number = rnd.Next(1, 90);
+        if (!IntList.Contains(number))
+        {
+            IntList.Add(number);
+        }
+    }
+}
+@functions {
+    public int SumNumber(int n){
+        int number = 0;
+        for (var i = 0; i < n; i++)
+        {
+            number++;
+        }
+        return number;
+    }
+
+    public int CountLetterInPhrase(string phrase, char letter){
+        string detectedPhrase = phrase;
+        char singleLetter = letter;
+
+        int count = detectedPhrase.Split(singleLetter).Length - 1;
+        return count;
+    }
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <strong>Esercizio n1:</strong>
+    Dichiarare una variabile valorizzandola con il nostro nome.<br />
+    Dichiarare un'altra variabile valorizzandola con il nostro cognome.<br />
+    Stampare il nostro nome e cognome all'interno di un tag h2.
+</p>
+<h2>Benvenuto @completeName </h2>
+
+<p>
+    <strong>Esercizio n2:</strong>
+    Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)<br />
+    Stampare dentro uno span il risultato.
+
+</p>
+<span>Calcolo somma numeri: @SumNumber(20)</span>
+
+<p>
+    <strong>Esercizio n3:</strong>
+    Contare quante volte la lettera a è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina
+    <p>Il numero di volte che la lettera "a" è presente nella frase è di @CountLetterInPhrase("nel mezzo del cammin di nostra vita", 'a');</p>
+</p>
+
+<p>
+    <strong>Esercizio n4:</strong>
+    Creare una List<int> di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70.
+   <p>@foreach(int number in IntList){
+       if(number < 70 && number > 20){
+          <span>@number</span>
+       }
+    }
+    </p>
+</p>
+
+<p>
+    <strong>Esercizio n5:</strong>
+    Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi
+    <p>@DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")</p>
+</p>
+
+<p>
+    <strong>Esercizio n6:</strong>
+    Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina<br />
+    a. la data di 7 giorni fa<br />
+    b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)<br />
+    c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
+    <p>a: La data di 7 giorni fa risulta: @DateTime.Now.AddDays(-7).ToString("dd.MM.yy");</p>
+    <p>b: Oggi è il @DateTime.Now.DayOfWeek.ToString();</p>
+    <p>c: Tra un anno esatto sarà il giorno @DateTime.Now.AddDays(365).DayOfWeek.ToString()</p>
+</p>
