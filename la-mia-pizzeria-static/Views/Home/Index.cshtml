@@ -6,21 +6,21 @@
 
     ViewData["Title"] = "Home Page";
 
-    ViewData["Name"] = pizza1.Name;
-    ViewData["Description"] = pizza1.Description;
-    ViewData["Price"] = pizza1.Price;
+    var name1 = pizza1.Name;
+    var description1 = pizza1.Description;
+    var price1 = pizza1.Price;
 
-    ViewData["Name2"] = pizza2.Name;
-    ViewData["Description2"] = pizza2.Description;
-    ViewData["Price2"] = pizza2.Price;
+    var name2 = pizza2.Name;
+    var description2 = pizza2.Description;
+    var price2 = pizza2.Price;
 
-    ViewData["Name3"] = pizza3.Name;
-    ViewData["Description3"] = pizza3.Description;
-    ViewData["Price3"] = pizza3.Price;
+    var name3 = pizza3.Name;
+    var description3 = pizza3.Description;
+    var price3 = pizza3.Price;
 
-    ViewData["Name4"] = pizza4.Name;
-    ViewData["Description4"] = pizza4.Description;
-    ViewData["Price4"] = pizza1.Price;
+    var name4 = pizza4.Name;
+    var description4 = pizza4.Description;
+    var price4 = pizza4.Price;
 }
 <div class="text-center">
     <h1 class="display-4">La mia Pizzeria</h1>
@@ -29,27 +29,27 @@
 
 <div class="pizza-section">
     <div class="pizza">
-        <h1>@ViewData["Name"]</h1>
-        <p>Descrizione: @ViewData["Description"]</p>
+        <h1>@name1</h1>
+        <p>Descrizione: @description1</p>
         <img class="image" src="~/img/margherita.jpg" alt="pizza margherita"/>
-        <p>Prezzo: @ViewData["Price"] €</p>
+        <p>Prezzo: @price1 €</p>
     </div>
     <div class="pizza">
-        <h1>@ViewData["Name2"]</h1>
-        <p>Descrizione: @ViewData["Description2"]</p>
+        <h1>@name2</h1>
+        <p>Descrizione: @description2</p>
         <img class="image" src="~/img/salamino.jpg" alt="pizza salamino" />
-        <p>Prezzo: @ViewData["Price2"] €</p>
+        <p>Prezzo: @price2 €</p>
     </div>
     <div class="pizza">
-        <h1>@ViewData["Name3"]</h1>
-        <p>Descrizione: @ViewData["Description3"]</p>
+        <h1>@name3</h1>
+        <p>Descrizione: @description3</p>
         <img class="image" src="~/img/tonno.jpg" alt="pizza tonno" />
-        <p>Prezzo: @ViewData["Price3"] €</p>
+        <p>Prezzo: @price3 €</p>
     </div>
     <div class="pizza">
-        <h1>@ViewData["Name4"]</h1>
-        <p>Descrizione: @ViewData["Description4"]</p>
+        <h1>@name4</h1>
+        <p>Descrizione: @description4</p>
         <img class="image" src="~/img/patate.jpg" alt="pizza patate" />
-        <p>Prezzo: @ViewData["Price4"] €</p>
+        <p>Prezzo: @price4 €</p>
     </div>
 </div>
