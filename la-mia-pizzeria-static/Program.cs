@@ -1,3 +1,5 @@
+using la_mia_pizzeria_static.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,3 +27,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+Pizza pizza1 = new Pizza("Pizza Margherita", "Pizza margherita classica", 10);
